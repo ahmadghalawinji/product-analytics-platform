@@ -15,6 +15,7 @@ data_generator/output/
 *.jsonl
 *.parquet
 *.csv.gz
+data_generator/data/raw/events/
 
 # Logs
 *.log
@@ -33,3 +34,13 @@ Thumbs.db
 # AWS temp
 .aws/
 credentials
+
+# dbt artifacts
+target/
+logs/
+dbt_packages/
+dbt_modules/
+
+# dbt local credentials
+profiles.yml
+**/profiles.yml

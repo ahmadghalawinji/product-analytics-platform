@@ -1,0 +1,57 @@
+{
+    "path_count": 177,
+    "parsed_path_count": 177,
+    "static_analysis_path_count": 5,
+    "static_analysis_parsed_path_count": 5,
+    "is_partial_parse_enabled": true,
+    "is_static_analysis_enabled": true,
+    "read_files_elapsed": 0.13677957999971113,
+    "load_macros_elapsed": 1.3692583409997496,
+    "parse_project_elapsed": 0.9084004669998649,
+    "patch_sources_elapsed": 0.03601151299972116,
+    "process_manifest_elapsed": 0.07267282200018599,
+    "load_all_elapsed": 2.6759849869999925,
+    "projects": [
+        {
+            "project_name": "product_analytics",
+            "elapsed": 0.8873463919999267,
+            "parsers": [
+                {
+                    "parser": "model",
+                    "elapsed": 0.3832422730001781,
+                    "parsed_path_count": 5
+                },
+                {
+                    "parser": "test",
+                    "elapsed": 0.496575059999941,
+                    "parsed_path_count": 4
+                }
+            ],
+            "parsed_path_count": 9
+        },
+        {
+            "project_name": "dbt_redshift",
+            "elapsed": 0.006581139999980223,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt_postgres",
+            "elapsed": 0.0071857449997878575,
+            "parsers": [],
+            "parsed_path_count": 0
+        },
+        {
+            "project_name": "dbt",
+            "elapsed": 0.007077177000155643,
+            "parsers": [
+                {
+                    "parser": "doc",
+                    "elapsed": 0.00040591800006950507,
+                    "parsed_path_count": 1
+                }
+            ],
+            "parsed_path_count": 1
+        }
+    ]
+}

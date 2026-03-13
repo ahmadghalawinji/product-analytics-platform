@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: int_sessions
+    description: "Session-level intermediate model derived from staged events. Each row represents one session and summarizes its timing and event activity."
+    columns:
+      - name: session_id
+        description: "Unique session identifier. One row per session in this model."
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: "User associated with the session, derived from the events in that session."
+        tests:
+          - not_null
+
+      - name: session_start_at
+        description: "Timestamp of the first event observed in the session."
+        tests:
+          - not_null
+
+      - name: session_end_at
+        description: "Timestamp of the last event observed in the session."
+        tests:
+          - not_null
+
+      - name: session_duration_seconds
+        description: "Length of the session in seconds, calculated as the difference between the first and last event timestamps."
+
+      - name: event_count
+        description: "Total number of events recorded in the session."
+
+      - name: distinct_event_types
+        description: "Number of distinct event names observed within the session."

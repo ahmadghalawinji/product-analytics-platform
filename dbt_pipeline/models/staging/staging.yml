@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: "Cleaned staging model built from raw product events. This model standardizes text fields, derives event_date, and preserves one row per source event."
+    columns:
+      - name: event_id
+        description: "Primary event identifier after staging. Expected to be unique and never null."
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        description: "User identifier associated with the event."
+        tests:
+          - not_null
+
+      - name: event_name
+        description: "Normalized event name in lowercase with surrounding whitespace removed."
+        tests:
+          - not_null
+
+      - name: event_timestamp
+        description: "Original event timestamp from the source table."
+        tests:
+          - not_null
+
+      - name: event_date
+        description: "Calendar date derived from event_timestamp for daily aggregations."
+
+      - name: session_id
+        description: "Session identifier carried from the source system. Multiple events can belong to the same session."
+
+      - name: device_type
+        description: "Normalized device category in lowercase."
+
+      - name: country
+        description: "Normalized country value in uppercase for consistent grouping."
+
+      - name: metadata
+        description: "Original semi-structured payload preserved for future extraction of nested attributes."

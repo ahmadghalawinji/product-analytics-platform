@@ -1,0 +1,16 @@
+product_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: redshift
+      method: database
+      host: product-analytics-wg.413545130618.us-east-1.redshift-serverless.amazonaws.com
+      port: 5439
+      user: admin
+      password: Aa12345678.
+      dbname: dev
+      schema: analytics
+      threads: 4
+      sslmode: prefer
+      retries: 3
+      connect_timeout: 30
